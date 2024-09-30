@@ -2,7 +2,6 @@ package org.example.controllers;
 
 import org.example.connection.DatabaseConnection;
 import org.example.entities.Libro;
-import org.example.entities.Prestamo;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

@@ -20,7 +20,7 @@ public class Main {
         dbconnect.connectDb();
 
         Data addData = new Data();
-        //addData.enterData();
+        addData.enterData();
 
         Scanner scanner = new Scanner(System.in);
 
@@ -125,10 +125,10 @@ public class Main {
         String answer = scanner.nextLine();
 
         if (answer.equals("si")) {
-            prestamo.setActivo(true);
+            prestamo.setActivo(false);
             prestamo.setIdLibro(null);
         } else {
-            prestamo.setActivo(false);
+            prestamo.setActivo(true);
         }
 
         // Crear instancia del DAO y guardar el préstamo.
