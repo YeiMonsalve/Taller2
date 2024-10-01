@@ -79,4 +79,15 @@ public class PrestamoDao {
             e.printStackTrace();
         }
     }
+
+    // Método para obtener un préstamo activo por el ID del libro.
+    public Prestamo obtenerPrestamoPorLibroId(int libroId) {
+        try (Session session = databaseConnection.getSession()) {
+            return session.createQuery("FROM Prestamo WHERE idLibro.id = :libroId AND activo = true", Prestamo.class)
+                    .setParameter("libroId", libroId)
+                    .uniqueResult();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
